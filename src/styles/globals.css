@@ -16,18 +16,86 @@
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+body{
+  overflow-y: hidden !important;
+  ::-webkit-scrollbar{
+    width: 5px;
+    background-color: #ff6e00 !important;
+  }
+
+  ::-webkit-scrollbar-track {
+  background-color: #f9f9f9;
 }
+
+  ::-webkit-scrollbar-thumb {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+     background-color: #ff6e00 !important;
+  }
+
+  .react-datepicker-wrapper {
+    width: 100% !important;
+  }
+
+  .react-datepicker__input-container > input {
+    width: 100% !important;
+  }
+}
+
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+
+  .base-wrapper {
+  height: 100vh;
+  width: 100%;
+  background: #ebe6e6;
+}
+
+@layer components {
+  /* contained */
+  .btn-contained-primary {
+    @apply bg-orange-600 cursor-pointer hover:bg-orange-700 text-white py-2 px-4 rounded-lg
+  }
+
+  .btn-contained-secondary {
+    @apply bg-gray-500 cursor-pointer hover:bg-gray-600 text-white py-2 px-4 rounded-lg
+  }
+
+  .btn-contained-warning {
+    @apply bg-yellow-500 cursor-pointer hover:bg-yellow-600 text-black py-2 px-4 rounded-lg
+  }
+
+  .btn-contained-success {
+    @apply bg-green-600 cursor-pointer hover:bg-green-700 text-white py-2 px-4 rounded-lg
+  }
+
+  .btn-contained-danger {
+     @apply bg-red-700 cursor-pointer hover:bg-red-800 text-white py-2 px-4 rounded-lg
+  }
+
+  /* Outlined variant */
+
+  .btn-outlined-primary {
+    @apply bg-transparent cursor-pointer hover:bg-orange-600 text-orange-600 font-semibold hover:text-white py-2 px-4 rounded-lg border border-orange-600 hover:border-transparent
+  }
+
+  .btn-outlined-secondary {
+    @apply bg-transparent cursor-pointer hover:bg-gray-600 text-black hover:text-white font-semibold py-2 px-4 rounded-lg border border-gray-600 hover:border-transparent
+  }
+
+  .btn-outlined-warning {
+    @apply bg-transparent cursor-pointer hover:bg-yellow-600 text-black font-semibold py-2 px-4 rounded-lg border border-yellow-600 hover:border-transparent
+  }
+
+  .btn-outlined-success {
+    @apply bg-transparent cursor-pointer hover:bg-green-700 text-green-700 font-semibold hover:text-white py-2 px-4 rounded-lg border border-green-700 hover:border-transparent
+  }
+
+  .btn-outlined-danger {
+     @apply bg-transparent cursor-pointer hover:bg-red-800 text-red-800 font-semibold hover:text-white py-2 px-4 rounded-lg border border-red-800 hover:border-transparent
+  }
+}
+
 }
